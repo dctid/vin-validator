@@ -5,3 +5,7 @@ fun validateLength(vin: String) =
 
 fun validate11Length(vin: String) =
     vin.length == 11
+
+fun validChars(vin: String) =
+    Regex("^[0-9a-hj-npr-z]{8}[0-9x][0-9a-hj-npr-z]{8}\$", RegexOption.IGNORE_CASE)
+        .matches(vin)

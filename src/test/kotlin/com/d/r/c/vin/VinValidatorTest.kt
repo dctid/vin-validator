@@ -2,7 +2,6 @@ package com.d.r.c.vin
 
 import assertk.assertThat
 import assertk.assertions.isTrue
-import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.api.Test
 
 internal class VinValidatorTest {
