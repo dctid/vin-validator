@@ -7,6 +7,7 @@ internal class VinValidatorTest {
 
     @Test
     internal fun `should accept valid 17 char vin`() {
-        assertTrue(VinValidator().validate("12345678901234567"))
+        assertTrue(VinValidator().validate("1FTDX1868WKA10140"))
     }
 }
+

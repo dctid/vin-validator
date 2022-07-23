@@ -5,3 +5,7 @@ class VinValidator {
         return true
     }
 }
+
+fun checksum(vin: String): Boolean{
+    return true
+}
