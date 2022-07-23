@@ -1,26 +1,28 @@
 package com.d.r.c.vin
 
-import org.junit.jupiter.api.Assertions.*
+import assertk.assertThat
+import assertk.assertions.isFalse
+import assertk.assertions.isTrue
 import org.junit.jupiter.api.Test
 
 internal class VinBasicValidatorTest {
     @Test
     internal fun `vin is 17 chars is true`() {
-        assertTrue(validateLength("12345678901234567"))
+        assertThat(validateLength("12345678901234567")).isTrue()
     }
 
     @Test
     internal fun `vin is not 17 chars is false`() {
-        assertFalse(validateLength("1234567890123456"))
+        assertThat(validateLength("1234567890123456")).isFalse()
     }
 
     @Test
     internal fun `vin is 11 chars is true`() {
-        assertTrue(validate11Length("12345678901"))
+        assertThat(validate11Length("12345678901")).isTrue()
     }
 
     @Test
     internal fun `vin is not 11 chars is false`() {
-        assertFalse(validate11Length("123456789012"))
+        assertThat(validate11Length("123456789012")).isFalse()
     }
 }
