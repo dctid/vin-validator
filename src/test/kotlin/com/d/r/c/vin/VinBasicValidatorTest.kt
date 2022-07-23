@@ -13,4 +13,14 @@ internal class VinBasicValidatorTest {
     internal fun `vin is not 17 chars is false`() {
         assertFalse(validateLength("1234567890123456"))
     }
+
+    @Test
+    internal fun `vin is 11 chars is true`() {
+        assertTrue(validate11Length("12345678901"))
+    }
+
+    @Test
+    internal fun `vin is not 11 chars is false`() {
+        assertFalse(validate11Length("123456789012"))
+    }
 }
