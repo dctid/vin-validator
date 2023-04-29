@@ -7,7 +7,7 @@ private fun calculateChecksum(vin: String) =
     vin.mapIndexed { index, c -> c.checksumDigitValue(index) }.sum() % 11
 
 private fun Char.checksumDigitValue(index: Int) =
-    (charValues[this]!! * weights[index])
+    (charValues[this] ?: -1) * weights[index]
 
 private fun Char.toChecksumDigit() =
     checksumDigits[this]
