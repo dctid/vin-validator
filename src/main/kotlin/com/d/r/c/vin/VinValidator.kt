@@ -2,10 +2,13 @@ package com.d.r.c.vin
 
 class VinValidator {
 
-    fun validate(vin: String): Boolean {
-        val validators = listOf<(String)->Boolean>(valLength, { s -> validateLength(s)})
-        return checksum(vin)
-    }
+    fun validate(vin: String): Boolean =
+        listOf(
+            valLength,
+            validChars,
+            checksum
+        ).map { it(vin) }.all { it }
+
 }
 
 

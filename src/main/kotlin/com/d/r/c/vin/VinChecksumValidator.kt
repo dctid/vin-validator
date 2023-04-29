@@ -1,7 +1,8 @@
 package com.d.r.c.vin
 
-fun checksum(vin: String): Boolean =
+val checksum = { vin: String ->
     calculateChecksum(vin) == vin[8].toChecksumDigit()
+}
 
 private fun calculateChecksum(vin: String) =
     vin.mapIndexed { index, c -> c.checksumDigitValue(index) }.sum() % 11
