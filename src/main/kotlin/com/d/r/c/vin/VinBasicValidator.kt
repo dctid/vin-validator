@@ -1,7 +1,9 @@
 package com.d.r.c.vin
 
-fun validateLength(vin: String) =
+fun validateLength(vin: String): Boolean =
     vin.length == 17
+
+val valLength = { s: String -> s.length == 17 }
 
 fun validate11Length(vin: String) =
     vin.length == 11
