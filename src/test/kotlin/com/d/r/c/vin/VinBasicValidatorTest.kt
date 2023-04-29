@@ -8,12 +8,12 @@ import org.junit.jupiter.api.Test
 internal class VinBasicValidatorTest {
     @Test
     internal fun `vin is 17 chars is true`() {
-        assertThat(validateLength("12345678901234567")).isTrue()
+        assertThat(VinValidator().validate("12345678901234567", Validators.LENGTH)).isTrue()
     }
 
     @Test
     internal fun `vin is not 17 chars is false`() {
-        assertThat(validateLength("1234567890123456")).isFalse()
+        assertThat(VinValidator().validate("1234567890123456", Validators.LENGTH)).isFalse()
     }
 
     @Test

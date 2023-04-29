@@ -2,15 +2,12 @@ package com.d.r.c.vin
 
 class VinValidator {
 
-    fun validate(vin: String): Boolean =
-        listOf(
-            valLength,
-            validChars,
-            checksum
-        ).map { it(vin) }.all { it }
-
-
+    fun validate(vin: String, vararg validators: Validators) =
+        validators.map { it.validator(vin) }.all { it }
 
 }
 
+enum class Validators(val validator: (String) -> Boolean) {
+    LENGTH(valLength), CHARS(validChars), CHECKSUM(checksum)
+}
 

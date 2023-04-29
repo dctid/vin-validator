@@ -22,6 +22,11 @@ internal class VinChecksumTest {
     }
 
     @Test
+    internal fun `invalid checksum char returns false`() {
+        assertThat(checksum("1FTDX186zWKA10140")).isFalse()
+    }
+
+    @Test
     internal fun `valid chars is true`() {
         assertThat(validChars("1FTDX186XWKA10140")).isTrue()
     }

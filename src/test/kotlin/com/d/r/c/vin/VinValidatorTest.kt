@@ -9,23 +9,17 @@ internal class VinValidatorTest {
 
     @Test
     internal fun `should accept valid 17 char vin`() {
-        assertThat(VinValidator().validate("1FTDX1868WKA10140")).isTrue()
+        assertThat(VinValidator().validate("1FTDX1868WKA10140", Validators.LENGTH)).isTrue()
     }
 
     @Test
     internal fun `should reject invalid checksum 17 char vin`() {
-        assertThat(VinValidator().validate("1FTDX1869WKA10140")).isFalse()
+        assertThat(VinValidator().validate("1FTDX1869WKA10140", Validators.CHARS, Validators.CHECKSUM)).isFalse()
     }
 
     @Test
     internal fun `should reject invalid chars 17 char vin`() {
-        assertThat(VinValidator().validate("1qTDX1869WKA10140")).isFalse()
-    }
-
-    @Test
-    internal fun name() {
-        ('0'..'9').forEach{ print(it) }
-
+        assertThat(VinValidator().validate("1qTDX1869WKA10140", Validators.CHARS)).isFalse()
     }
 }
 

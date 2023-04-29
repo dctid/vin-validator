@@ -1,7 +1,5 @@
 package com.d.r.c.vin
 
-fun validateLength(vin: String): Boolean =
-    vin.length == 17
 
 val valLength = { s: String -> s.length == 17 }
 
