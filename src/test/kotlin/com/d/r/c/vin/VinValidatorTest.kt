@@ -21,5 +21,11 @@ internal class VinValidatorTest {
     internal fun `should reject invalid chars 17 char vin`() {
         assertThat(VinValidator().validate("1qTDX1869WKA10140")).isFalse()
     }
+
+    @Test
+    internal fun name() {
+        ('0'..'9').forEach{ print(it) }
+
+    }
 }
 

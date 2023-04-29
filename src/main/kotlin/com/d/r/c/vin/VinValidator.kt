@@ -9,6 +9,8 @@ class VinValidator {
             checksum
         ).map { it(vin) }.all { it }
 
+
+
 }
 
 
