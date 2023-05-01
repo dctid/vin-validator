@@ -18,11 +18,11 @@ internal class VinBasicValidatorTest {
 
     @Test
     internal fun `vin is 11 chars is true`() {
-        assertThat(validate11Length("12345678901")).isTrue()
+        assertThat(VinValidator().validate("12345678901", Validators.LENGTH_11)).isTrue()
     }
 
     @Test
     internal fun `vin is not 11 chars is false`() {
-        assertThat(validate11Length("123456789012")).isFalse()
+        assertThat(VinValidator().validate("123456789012", Validators.LENGTH_11)).isFalse()
     }
 }

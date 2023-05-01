@@ -10,6 +10,10 @@ internal class VinChecksumTest {
     internal fun `valid checksum returns true`() {
         assertThat(checksum("1FTDX1868WKA10140")).isTrue()
     }
+    @Test
+    internal fun `valid checksum lowercase returns true`() {
+        assertThat(checksum("1ftdx1868wka10140")).isTrue()
+    }
 
     @Test
     internal fun `valid checksum with X check digit returns true`() {
@@ -54,5 +58,14 @@ internal class VinChecksumTest {
     @Test
     internal fun `check digit a is false`() {
         assertThat(validChars("1FTDX186aWKA10140")).isFalse()
+    }
+    @Test
+    internal fun `contains 18 chars is false`() {
+        assertThat(checksum("1FTDX1868WKA10140p")).isFalse()
+    }
+
+    @Test
+    internal fun `contains 16 chars is false`() {
+        assertThat(checksum("1FTDX1868WKA1014")).isFalse()
     }
 }

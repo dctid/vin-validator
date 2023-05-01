@@ -1,7 +1,8 @@
 package com.d.r.c.vin
 
 val checksum = { vin: String ->
-    calculateChecksum(vin) == vin[8].toChecksumDigit()
+    validChars(vin) &&
+            calculateChecksum(vin) == vin[8].toChecksumDigit()
 }
 
 private fun calculateChecksum(vin: String) =
@@ -12,12 +13,12 @@ private fun Char.checksumDigitValue(index: Int) =
 
 private val weights = listOf(8, 7, 6, 5, 4, 3, 2, 10, 0, 9, 8, 7, 6, 5, 4, 3, 2)
 
- private fun Char.toChecksumDigit() =
-     when {
-         isDigit() -> digitToInt()
-         this == 'X' -> 10
-         else -> -1
-     }
+private fun Char.toChecksumDigit() =
+    when {
+        isDigit() -> digitToInt()
+        this == 'X' -> 10
+        else -> -1
+    }
 
 private val charValues = mapOf(
     '1' to 1,
