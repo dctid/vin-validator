@@ -5,7 +5,7 @@ import assertk.assertions.isFalse
 import assertk.assertions.isTrue
 import org.junit.jupiter.api.Test
 
-internal class VinBasicValidatorTest {
+internal class VinLengthValidatorTest {
     @Test
     internal fun `vin is 17 chars is true`() {
         assertThat(VinValidator().validate("12345678901234567", Validators.LENGTH)).isTrue()
